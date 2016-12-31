@@ -34,10 +34,7 @@ RUN set -x \
   && wget -nv -O /tmp/atlassian-servicedesk-${VERSION}.tar.gz https://www.atlassian.com/software/jira/downloads/binary/atlassian-servicedesk-${VERSION}.tar.gz \
   && tar xfz /tmp/atlassian-servicedesk-${VERSION}.tar.gz --strip-components=1 -C ${JIRA_INST} \
   && rm /tmp/atlassian-servicedesk-${VERSION}.tar.gz \
-  && chown -R ${SYSTEM_USER}:${SYSTEM_GROUP} "${JIRA_INST}/conf" \
-  && chown -R ${SYSTEM_USER}:${SYSTEM_GROUP} "${JIRA_INST}/logs" \
-  && chown -R ${SYSTEM_USER}:${SYSTEM_GROUP} "${JIRA_INST}/temp" \
-  && chown -R ${SYSTEM_USER}:${SYSTEM_GROUP} "${JIRA_INST}/work" \
+  && chown -R ${SYSTEM_USER}:${SYSTEM_GROUP} ${JIRA_INST} \
   && chown -R ${SYSTEM_USER}:${SYSTEM_GROUP} ${JIRA_HOME}
 
 RUN set -x \
